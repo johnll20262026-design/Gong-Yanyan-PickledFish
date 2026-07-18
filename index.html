@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龚艳艳·老江津酸菜鱼 - 盛宴·粼水轩院子</title>
+    <meta name="description" content="龚艳艳·老江津酸菜鱼，武汉黄家湖金牌好店，入围武汉市酸菜鱼好评榜，人均¥73，正宗老江津味道">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#12a17d',
+                        'primary-dark': '#0f8a6a',
+                        gold: '#d4a853',
+                        'gold-light': '#e8c97a',
+                        cream: '#fefcf8',
+                        'warm-gray': '#f5f2ed',
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif SC', 'serif'],
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            }
+            .text-shadow-lg {
+                text-shadow: 0 4px 16px rgba(0,0,0,0.5);
+            }
+            .animate-fade-in {
+                animation: fadeIn 0.8s ease-out forwards;
+            }
+            .animate-fade-in-up {
+                animation: fadeInUp 0.8s ease-out forwards;
+            }
+            .animate-float {
+                animation: float 3s ease-in-out infinite;
+            }
+            .animate-pulse-gentle {
+                animation: pulseGentle 2.5s ease-in-out infinite;
+            }
+            .animate-shimmer {
+                overflow: hidden;
+            }
+            .animate-shimmer::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 50%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+                animation: shimmer 3s ease-in-out infinite;
+            }
+            .bg-pattern {
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2312a17d' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulseGentle {
+            0%, 100% { box-shadow: 0 10px 25px -5px rgba(18, 161, 125, 0.4), 0 8px 10px -6px rgba(18, 161, 125, 0.3); transform: scale(1); }
+            50% { box-shadow: 0 15px 35px -5px rgba(18, 161, 125, 0.5), 0 10px 15px -6px rgba(18, 161, 125, 0.4); transform: scale(1.03); }
+        }
+        @keyframes shimmer {
+            0% { left: -100%; }
+            50%, 100% { left: 150%; }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .opacity-0-init { opacity: 0; }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-cream overflow-x-hidden">
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                        <i data-lucide="fish" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <span class="font-serif font-bold text-lg lg:text-xl text-gray-800">龚艳艳·老江津酸菜鱼</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary transition-colors font-medium">首页</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors font-medium">关于我们</a>
+                    <a href="#deals" class="text-gray-700 hover:text-primary transition-colors font-medium">团购优惠</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-primary transition-colors font-medium">顾客评价</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">联系我们</a>
+                    <a href="https://ai-tools-guide-ar8.pages.dev/" target="_blank" class="text-gray-700 hover:text-primary transition-colors font-medium flex items-center gap-1">
+                        <i data-lucide="life-buoy" class="w-4 h-4"></i>
+                        <span>技术支持</span>
+                    </a>
+                </div>
+                <a href="https://v.douyin.com/FW8CR8eh424/" target="_blank" class="hidden sm:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-lg shadow-primary/20">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    <span>抖音团购</span>
+                </a>
+                <button class="md:hidden p-2" id="mobileMenuBtn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-primary">首页</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-primary">关于我们</a>
+                <a href="#deals" class="block py-2 text-gray-700 hover:text-primary">团购优惠</a>
+                <a href="#reviews" class="block py-2 text-gray-700 hover:text-primary">顾客评价</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary">联系我们</a>
+                <a href="https://ai-tools-guide-ar8.pages.dev/" target="_blank" class="flex items-center gap-2 py-2 text-gray-700 hover:text-primary">
+                    <i data-lucide="life-buoy" class="w-4 h-4"></i>
+                    <span>技术支持</span>
+                </a>
+                <a href="https://v.douyin.com/FW8CR8eh424/" target="_blank" class="flex items-center justify-center gap-2 bg-primary text-white px-5 py-3 rounded-full font-medium mt-4">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    <span>抖音团购</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=authentic%20Chinese%20sichuan%20sauerkraut%20fish%20%28suan%20cai%20yu%29%20in%20traditional%20Chinese%20restaurant%20setting%2C%20steaming%20hot%20pot%20with%20fresh%20fish%20fillets%2C%20pickled%20vegetables%2C%20red%20chili%20oil%2C%20Sichuan%20peppercorns%2C%20appetizing%20food%20photography%2C%20warm%20lighting%2C%20professional%20restaurant%20photos&image_size=landscape_16_9" alt="酸菜鱼" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <div class="opacity-0-init animate-fade-in-up">
+                <div class="inline-flex items-center gap-2 bg-gold/90 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+                    <i data-lucide="award" class="w-4 h-4"></i>
+                    <span>入围武汉市酸菜鱼好评榜</span>
+                </div>
+            </div>
+            <h1 class="font-serif font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white text-shadow-lg mb-4 opacity-0-init animate-fade-in-up delay-100">
+                龚艳艳·老江津酸菜鱼
+            </h1>
+            <p class="text-xl sm:text-2xl text-white/90 font-serif mb-2 text-shadow opacity-0-init animate-fade-in-up delay-200">
+                盛宴·粼水轩院子
+            </p>
+            <p class="text-lg text-white/80 mb-8 max-w-2xl mx-auto opacity-0-init animate-fade-in-up delay-300">
+                传承老江津正宗技艺，鲜活好鱼配上等酸菜，一锅鲜香，回味无穷
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-10 opacity-0-init animate-fade-in-up delay-400">
+                <div class="flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full">
+                    <i data-lucide="star" class="w-5 h-5 text-gold fill-gold"></i>
+                    <span class="font-semibold">金牌好店</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                    <span>人均 <span class="font-bold text-gold-light">¥73</span></span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    <span>黄家湖</span>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center opacity-0-init animate-fade-in-up delay-500">
+                <a href="#deals" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105 shadow-xl shadow-primary/30">
+                    <i data-lucide="tag" class="w-5 h-5"></i>
+                    <span>查看团购套餐</span>
+                </a>
+                <a href="https://v.douyin.com/FW8CR8eh424/" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105">
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                    <span>抖音立即抢购</span>
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+            <a href="#about" class="text-white/70 hover:text-white transition-colors">
+                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-16 bg-primary/5 bg-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-3">
+                        <i data-lucide="award" class="w-8 h-8 text-primary"></i>
+                    </div>
+                    <div class="font-bold text-2xl text-gray-800">金牌好店</div>
+                    <div class="text-gray-500 text-sm mt-1">品质认证</div>
+                </div>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gold/10 rounded-full mb-3">
+                        <i data-lucide="trophy" class="w-8 h-8 text-gold"></i>
+                    </div>
+                    <div class="font-bold text-2xl text-gray-800">第4名</div>
+                    <div class="text-gray-500 text-sm mt-1">黄家湖大学美食好评榜</div>
+                </div>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-3">
+                        <i data-lucide="thumbs-up" class="w-8 h-8 text-primary"></i>
+                    </div>
+                    <div class="font-bold text-2xl text-gray-800">好评榜</div>
+                    <div class="text-gray-500 text-sm mt-1">武汉市酸菜鱼入围</div>
+                </div>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gold/10 rounded-full mb-3">
+                        <i data-lucide="smile" class="w-8 h-8 text-gold"></i>
+                    </div>
+                    <div class="font-bold text-2xl text-gray-800">高回头率</div>
+                    <div class="text-gray-500 text-sm mt-1">顾客真实推荐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=charming%20Chinese%20courtyard%20restaurant%20interior%2C%20traditional%20Chinese%20architecture%20with%20modern%20touches%2C%20warm%20ambient%20lighting%2C%20wooden%20tables%20and%20chairs%2C%20clean%20and%20elegant%20dining%20environment%2C%20water%20feature%20in%20courtyard%2C%20professional%20interior%20photography&image_size=landscape_4_3" alt="餐厅环境" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-primary/10 rounded-2xl -z-10"></div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-gold/10 rounded-2xl -z-10"></div>
+                </div>
+                <div>
+                    <div class="inline-flex items-center gap-2 text-primary font-medium mb-4">
+                        <span class="w-8 h-0.5 bg-primary"></span>
+                        <span>关于我们</span>
+                    </div>
+                    <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-6">
+                        传承老江津味道<br>
+                        <span class="text-primary">一鱼一故事，一菜一匠心</span>
+                    </h2>
+                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <p>
+                            <span class="font-semibold text-gray-800">龚艳艳·老江津酸菜鱼</span>（原盛宴·粼水轩院子餐厅）坐落于武汉黄家湖片区，是一家专注于正宗重庆江津酸菜鱼的特色餐厅。
+                        </p>
+                        <p>
+                            我们坚持选用<span class="text-primary font-semibold">鲜活好鱼</span>，每日新鲜到店，现点现杀；传承老江津传统腌制工艺的<span class="text-primary font-semibold">古法酸菜</span>，经过九九八十一天自然发酵，酸香醇厚；配以独创的<span class="text-primary font-semibold">秘制汤底</span>，鱼骨熬制数小时，汤鲜味美，酸中带辣，辣而不燥。
+                        </p>
+                        <p>
+                            餐厅位于雅致的院子环境中，既有中式庭院的韵味，又不失现代舒适感，是家庭聚餐、朋友聚会、情侣约会的理想之选。
+                        </p>
+                    </div>
+                    <div class="mt-8 grid grid-cols-3 gap-4">
+                        <div class="text-center p-4 bg-warm-gray rounded-xl">
+                            <div class="text-2xl font-bold text-primary mb-1">鲜活</div>
+                            <div class="text-sm text-gray-500">每日鲜鱼</div>
+                        </div>
+                        <div class="text-center p-4 bg-warm-gray rounded-xl">
+                            <div class="text-2xl font-bold text-primary mb-1">古法</div>
+                            <div class="text-sm text-gray-500">传统酸菜</div>
+                        </div>
+                        <div class="text-center p-4 bg-warm-gray rounded-xl">
+                            <div class="text-2xl font-bold text-primary mb-1">匠心</div>
+                            <div class="text-sm text-gray-500">秘制汤底</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="deals" class="py-20 lg:py-28 bg-gradient-to-b from-warm-gray to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <div class="inline-flex items-center gap-2 text-primary font-medium mb-4">
+                    <span class="w-8 h-0.5 bg-primary"></span>
+                    <span>超值团购</span>
+                    <span class="w-8 h-0.5 bg-primary"></span>
+                </div>
+                <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+                    人气团购套餐
+                </h2>
+                <p class="text-gray-500 max-w-xl mx-auto">
+                    精选高销量团购套餐，超值优惠，提前购买更划算
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="relative aspect-[4/3] overflow-hidden">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20sichuan%20sauerkraut%20fish%20set%20meal%20for%20two%20people%2C%20hot%20suan%20cai%20yu%20fish%20pot%2C%20side%20dishes%2C%20rice%2C%20appetizing%20food%20photography%2C%20restaurant%20style&image_size=square" alt="双人套餐" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-red-500 text-white text-sm font-bold px-3 py-1 rounded-full">热销爆款</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium px-2 py-1 rounded-full">已售 2000+</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-xl text-gray-900 mb-2">经典酸菜鱼双人餐</h3>
+                        <p class="text-gray-500 text-sm mb-4">招牌酸菜鱼 + 配菜 + 米饭，双人共享好滋味</p>
+                        <div class="flex items-end gap-2 mb-4">
+                            <span class="text-3xl font-black text-primary">¥88</span>
+                            <span class="text-gray-400 line-through text-lg mb-1">¥158</span>
+                            <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded mb-1">5.6折</span>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>招牌老江津酸菜鱼（约2斤）</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>精选配菜两份</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>米饭两份 + 酸梅汤一扎</span>
+                            </div>
+                        </div>
+                        <a href="https://v.douyin.com/FW8CR8eh424/" target="_blank" class="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-xl font-semibold transition-all hover:scale-[1.02]">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>立即抢购</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-xl ring-2 ring-primary relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                        <span class="bg-gold text-white text-sm font-bold px-4 py-1.5 rounded-full shadow-lg">超值推荐</span>
+                    </div>
+                    <div class="relative aspect-[4/3] overflow-hidden">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=generous%20chinese%20fish%20feast%20for%20four%20people%2C%20large%20suan%20cai%20yu%20pot%2C%20multiple%20side%20dishes%2C%20appetizers%2C%20drinks%2C%20abundant%20family%20style%20meal%2C%20food%20photography&image_size=square" alt="四人套餐" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white text-sm font-bold px-3 py-1 rounded-full">人气王</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium px-2 py-1 rounded-full">已售 1500+</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-xl text-gray-900 mb-2">欢聚满堂4-5人餐</h3>
+                        <p class="text-gray-500 text-sm mb-4">丰盛菜品搭配，家庭朋友聚会首选</p>
+                        <div class="flex items-end gap-2 mb-4">
+                            <span class="text-3xl font-black text-primary">¥188</span>
+                            <span class="text-gray-400 line-through text-lg mb-1">¥328</span>
+                            <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded mb-1">5.7折</span>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>金牌酸菜鱼（约3斤）</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>招牌凉菜两份</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>精选配菜四份</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>主食 + 饮品 + 纸巾</span>
+                            </div>
+                        </div>
+                        <a href="https://v.douyin.com/FW8CR8eh424/" target="_blank" class="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-xl font-semibold transition-all hover:scale-[1.02]">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>立即抢购</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="relative aspect-[4/3] overflow-hidden">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=single%20person%20chinese%20lunch%20set%2C%20individual%20portion%20suan%20cai%20yu%20noodles%20or%20rice%20set%2C%20with%20soup%20and%20side%20dish%2C%20convenient%20quick%20meal%2C%20appetizing%20food%20photo&image_size=square" alt="单人餐" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-blue-500 text-white text-sm font-bold px-3 py-1 rounded-full">工作日特惠</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium px-2 py-1 rounded-full">已售 3000+</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-xl text-gray-900 mb-2">酸菜鱼单人工作餐</h3>
+                        <p class="text-gray-500 text-sm mb-4">一人食也精彩，快捷美味不将就</p>
+                        <div class="flex items-end gap-2 mb-4">
+                            <span class="text-3xl font-black text-primary">¥39.9</span>
+                            <span class="text-gray-400 line-through text-lg mb-1">¥68</span>
+                            <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded mb-1">5.9折</span>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>单人份酸菜鱼</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>时蔬配菜</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                <span>米饭 + 例汤</span>
+                            </div>
+                        </div>
+                        <a href="https://v.douyin.com/FW8CR8eh424/" target="_blank" class="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-xl font-semibold transition-all hover:scale-[1.02]">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>立即抢购</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <p class="text-gray-500 mb-4">更多优惠套餐，请访问我们的抖音主页</p>
+                <a href="https://v.douyin.com/FW8CR8eh424/" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-medium transition-colors">
+                    <span>查看全部团购</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <div class="inline-flex items-center gap-2 text-primary font-medium mb-4">
+                    <span class="w-8 h-0.5 bg-primary"></span>
+                    <span>顾客好评</span>
+                    <span class="w-8 h-0.5 bg-primary"></span>
+                </div>
+                <h2 class="font-serif font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+                    吃过的人都怎么说
+                </h2>
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="flex">
+                        <i data-lucide="star" class="w-6 h-6 text-gold fill-gold"></i>
+                        <i data-lucide="star" class="w-6 h-6 text-gold fill-gold"></i>
+                        <i data-lucide="star" class="w-6 h-6 text-gold fill-gold"></i>
+                        <i data-lucide="star" class="w-6 h-6 text-gold fill-gold"></i>
+                        <i data-lucide="star" class="w-6 h-6 text-gold fill-gold"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">4.9分</span>
+                    <span class="text-gray-500">· 超赞</span>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center text-white font-bold">
+                            王
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">王同学</div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">"黄家湖附近最好吃的酸菜鱼！没有之一！鱼肉特别嫩，酸菜很正宗，酸中带辣特别开胃，我们宿舍每周都要来吃一次。院子环境也很有特色，适合拍照打卡，人均才70左右，学生党完全可以接受！"</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-gray-400">
+                        <i data-lucide="thumbs-up" class="w-4 h-4"></i>
+                        <span>推荐：招牌酸菜鱼</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gold to-gold/70 rounded-full flex items-center justify-center text-white font-bold">
+                            李
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">李女士</div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">"带家人一起来吃的，老人家特别喜欢！鱼很新鲜，汤底奶白奶白的，喝了好几碗。老板人很热情，听说我们是第一次来还给我们推荐了最佳搭配。环境是那种院子餐厅，很有格调，家庭聚餐首选。"</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-gray-400">
+                        <i data-lucide="thumbs-up" class="w-4 h-4"></i>
+                        <span>推荐：4-5人欢聚餐</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center text-white font-bold">
+                            张
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">张先生</div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">"团购的双人餐太划算了！88块钱两个人吃得饱饱的。酸菜鱼分量很足，鱼片爽滑Q弹，泡菜是那种老坛酸菜的味道，特别正宗。服务员态度也很好，加汤很及时。已经推荐给同事们了！"</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-gray-400">
+                        <i data-lucide="thumbs-up" class="w-4 h-4"></i>
+                        <span>推荐：经典双人餐</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-400 rounded-full flex items-center justify-center text-white font-bold">
+                            陈
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">陈小姐</div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">"周末和男朋友约会来的，院子环境超赞！有小桥流水的感觉，拍照超出片。点的双人餐，酸菜鱼一端上来香气扑鼻，鱼肉嫩到入口即化，酸菜特别下饭，连吃了两碗米饭！下次还要来试试其他菜！"</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-gray-400">
+                        <i data-lucide="thumbs-up" class="w-4 h-4"></i>
+                        <span>推荐：约会打卡</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-400 rounded-full flex items-center justify-center text-white font-bold">
+                            刘
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">刘师傅</div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">"作为一个重庆人，在武汉能吃到这么正宗的江津酸菜鱼真的不容易！酸菜的味道对了，花椒和辣椒的比例也刚刚好，麻辣鲜香。老板也是重庆人，很聊得来，以后会常来的，这才是家乡的味道！"</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-gray-400">
+                        <i data-lucide="thumbs-up" class="w-4 h-4"></i>
+                        <span>推荐：正宗重庆味</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-400 rounded-full flex items-center justify-center text-white font-bold">
+                            赵
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">赵同学</div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 text-gold fill-gold"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">"工作餐经常来这里吃，单人餐39.9性价比超高！出餐快，味道稳定，酸菜鱼配米饭绝了，吃完下午上班都有精神。店里很干净，卫生条件不错，吃着放心。强烈推荐附近的上班族来试试！"</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-gray-400">
+                        <i data-lucide="thumbs-up" class="w-4 h-4"></i>
+                        <span>推荐：单人工作餐</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 lg:py-28 bg-gradient-to-br from-primary/90 to-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <div class="inline-flex items-center gap-2 text-white/80 font-medium mb-4">
+                    <span class="w-8 h-0.5 bg-white/60"></span>
+                    <span>联系我们</span>
+                    <span class="w-8 h-0.5 bg-white/60"></span>
+                </div>
+                <h2 class="font-serif font-bold text-3xl md:text-4xl text-white mb-4">
+                    期待您的光临
+                </h2>
+                <p class="text-white/80 max-w-xl mx-auto">
+                    地址、营业时间、联系方式，一键获取
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-colors">
+                    <div class="inline-flex items-center justify-center w-14 h-14 bg-white/20 rounded-full mb-4">
+                        <i data-lucide="map-pin" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-white text-lg mb-2">餐厅地址</h3>
+                    <p class="text-white/80 text-sm">武汉市洪山区黄家湖<br>盛宴·粼水轩院子</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-colors">
+                    <div class="inline-flex items-center justify-center w-14 h-14 bg-white/20 rounded-full mb-4">
+                        <i data-lucide="clock" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-white text-lg mb-2">营业时间</h3>
+                    <p class="text-white/80 text-sm">周一至周日<br>10:30 - 21:30</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-colors">
+                    <div class="inline-flex items-center justify-center w-14 h-14 bg-white/20 rounded-full mb-4">
+                        <i data-lucide="wallet" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-white text-lg mb-2">人均消费</h3>
+                    <p class="text-white/80 text-sm">约 ¥73 / 人<br>团购更优惠</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-colors">
+                    <div class="inline-flex items-center justify-center w-14 h-14 bg-white/20 rounded-full mb-4">
+                        <i data-lucide="phone" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-white text-lg mb-2">预订咨询</h3>
+                    <p class="text-white/80 text-sm">欢迎提前预定<br>点击抖音联系</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="https://v.douyin.com/FW8CR8eh424/" target="_blank" class="inline-flex items-center gap-3 bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105 shadow-xl">
+                    <i data-lucide="navigation" class="w-5 h-5"></i>
+                    <span>点击导航到店 / 立即抢购</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <i data-lucide="fish" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="font-serif font-bold text-lg">龚艳艳·老江津酸菜鱼</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        传承老江津正宗酸菜鱼技艺，鲜活好鱼，古法酸菜，匠心烹制。黄家湖金牌好店，期待您的光临。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">快速导航</h4>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-gray-400 hover:text-primary transition-colors text-sm">首页</a>
+                        <a href="#about" class="block text-gray-400 hover:text-primary transition-colors text-sm">关于我们</a>
+                        <a href="#deals" class="block text-gray-400 hover:text-primary transition-colors text-sm">团购优惠</a>
+                        <a href="#reviews" class="block text-gray-400 hover:text-primary transition-colors text-sm">顾客评价</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-primary transition-colors text-sm">联系我们</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">关注我们</h4>
+                    <div class="flex gap-3 mb-4">
+                        <a href="https://v.douyin.com/FW8CR8eh424/" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors">
+                            <i data-lucide="music" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        <i data-lucide="map-pin" class="w-4 h-4 inline mr-1"></i>
+                        武汉市洪山区黄家湖
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2024 龚艳艳·老江津酸菜鱼（盛宴·粼水轩院子） 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://ai-tools-guide-ar8.pages.dev/" target="_blank" rel="noopener noreferrer" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999;" class="bg-primary hover:bg-primary-dark text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2 animate-pulse-gentle font-medium" title="技术支持">
+        <i data-lucide="life-buoy" class="w-5 h-5"></i>
+        <span>技术支持</span>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    entry.target.classList.remove('opacity-0-init');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('opacity-0-init');
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.animate-fade-in-up').forEach(el => {
+            el.classList.remove('opacity-0-init');
+        });
+    </script>
+</body>
+</html>
